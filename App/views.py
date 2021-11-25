@@ -7,7 +7,7 @@ def index(request):
         'message' : '은비는 소중해',
         'content' : '공부하자 모두들',
     }
-    return render("index.html", context)
+    return render(request, "index.html", context)
 
 def Register(request):
     print(request)
