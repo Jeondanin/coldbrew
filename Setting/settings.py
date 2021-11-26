@@ -77,7 +77,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'coindb',
-        'user':"postgres",
+        'USER':"postgres",
         'PASSWORD':"eksdlsdmsql",
         "HOST":"postgres.c5gpltxxnqyr.ap-northeast-2.rds.amazonaws.com",
         "PORT":5432
