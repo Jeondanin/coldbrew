@@ -75,8 +75,12 @@ WSGI_APPLICATION = 'Setting.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'coindb',
+        'user':"postgresql",
+        'PASSWORD':"eksdlsdmsql",
+        "HOST":"postgres.c5gpltxxnqyr.ap-northeast-2.rds.amazonaws.com",
+        "PORT":5432
     }
 }
 
