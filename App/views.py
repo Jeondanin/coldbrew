@@ -37,7 +37,7 @@ class TagListView(ListView):
 
 class CategoryPostView(ListView):
     model = Post
-    template_name = 'blog/category_post.html'
+    template_name = 'App/category_post.html'
 
     def get_queryset(self):
         category_slug = self.kwargs['category_slug']
@@ -53,7 +53,7 @@ class CategoryPostView(ListView):
 
 class TagPostView(ListView):
     model = Post
-    template_name = 'blog/tag_post.html'
+    template_name = 'App/tag_post.html'
 
     def get_queryset(self):
         tag_slug = self.kwargs['tag_slug']
