@@ -2,7 +2,7 @@ from django.urls import path
 
 from App.views import IndexView, PostDetailView, CategoryListView, TagListView, CategoryPostView, TagPostView
 
-app_name = 'blog'
+app_name = 'App'
 urlpatterns = [
     path('', IndexView.as_view(), name='index'),
     path('post/<int:pk>/', PostDetailView.as_view(), name='post_detail'),
