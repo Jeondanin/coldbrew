@@ -5,10 +5,9 @@
 {% block description %}マイブログです。毎日更新します。{% endblock %}
 
 {% block content %}
-<div class="container">
+<div class="container d-container">
   <div class="row">
     <main class="col-md-8">
-      <h1 class="mb-4">投稿一覧</h1>
       {% include "App/snippets/main_post_list.html" %}
       {% include "App/snippets/pagination.html" %}
     </main>
