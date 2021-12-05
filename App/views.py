@@ -22,6 +22,7 @@ class IndexView(ListView):
     model = Post
     template_name = 'App/index.html'
     paginate_by = 1
+    queryset = Post.objects.filter(Q(is_public=True))
 
 
 class CategoryListView(ListView):
