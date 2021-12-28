@@ -5,11 +5,25 @@
 {% block content %}
 <div class="container">
     <div class="row">
-      <main class="col-md-8">
+      <main class="col-md-8 text-light">
         <h1>{{ object.title }}</h1>
         <p>作成日:{{ object.created_at| date:'y/m/d H:i:s' }}</p>
         <p>更新日:{{ object.published_at| date:'y/m/d H:i:s' }}</p>
-        <hr>
+        <hr style="background-color: white">
+        
+        {% for tag in object.tags.all %}
+          {% if "日本" == tag.name %}
+            {% with "App/snippets/"|add:tag.name|add:"/01.html" as title_template %}
+              {% include title_template %}
+            {% endwith %}
+          {% else %}
+          {% with "App/snippets/it/01.html" as title_template %}
+            {% include title_template %}
+          {% endwith %}
+            no tag 日本
+          {% endif %}
+        {% endfor %}
+
         {{ object.content|safe }}
         {% if object.image %}
             <img src="{{ object.image.url }}" width="512" height="360" alt="やきとり"/>
