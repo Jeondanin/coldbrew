@@ -27,4 +27,22 @@
     <div class="card-body text-center">
       <a href="{% url 'App:tag_list' %}" class="card-link">すべてのタグを見る</a>
     </div>
+    <!-- history-->
+    <div class="card">
+      <div class="card-header" style="background-color:#343a40;color: #ffffff;">
+        アーカイブ
+      </div>
+      <ul class="list-group list-group-flush">
+
+
+      {% for one_ac in history|dictsortreversed:"created_at__date" %}
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="" class="card-link">{{ one_ac.created_at__date }}</a>
+        <span class="badge bg-dark text-light">{{ one_ac.count }}</span>
+      </li>
+      {% endfor %}
+
+        </ul>
+
+  
   </div>

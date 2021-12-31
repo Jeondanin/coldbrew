@@ -4,6 +4,7 @@ from django.http import Http404
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 from django.shortcuts import get_object_or_404
+from django.db.models.functions import TruncMonth
 
 from App.models import Post, Category, Tag
 
@@ -34,7 +35,9 @@ class TagListView(ListView):
     queryset = Tag.objects.annotate(num_posts=Count(
         'post', filter=Q(post__is_public=True)))
 
-
+class HistoryView(ListView):
+    queryset = Post.objects.values('created_at__date')\
+            .annotate(count=Count('id', filter=Q(is_public=True))).values('created_at__date', 'count').order_by('created_at__date')
 
 
 class CategoryPostView(ListView):
